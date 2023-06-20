@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+:root {
+    /* colours */
+    --black: black;
+
+    /* font */
+    --base-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh; 
+    background-color: var(--black);   
+}
+
+#calculator {
+    margin: 5% 8%;
+    /* border: solid 2px rgba(255, 255, 255, 0.6);
+    border-radius: 14px; */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-rows: 0.22fr 0.78fr;
+}
+
+.output-area {
+    color: white;
+    text-align: right;
+}
+.output {
+    font-size: xx-large;
+}
+.button-area {
+    /* border: solid 2px rgba(255, 255, 255, 0.6);
+    border-radius: 14px; */
+    display: grid;
+    grid-template-columns: 0.6fr 0.4fr;
+    
+}
+.button-area .left {
+    /* border: solid 2px rgba(255, 255, 255, 0.6);
+    border-radius: 14px; */
+    display: grid;
+    gap: 0.2%;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    place-items: center;
+}
+.button-area .right {
+    /* border: solid 2px rgba(255, 255, 255, 0.6);
+    border-radius: 14px; */
+    display: grid;
+    gap: 0.2%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    place-items: center;
+}
+@media screen and (max-width: 1024px) {
+    #calculator {
+        margin: 5%;
+    }
+    .button-area {
+        grid-template-columns: 1fr;
+    }
+    .button-area .left {
+        display: none;
+    }    
+}  
+.button {
+    border-radius: 50%;
+    background-color: rgba(240, 248, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--base-font);
+    font-weight: 200;
+}
+.button ~ .button31, .button ~ .button32, .button ~ .button33 {
+    background-color: rgba(240, 248, 255, 0.4);
+}
+.content {
+    text-align: center;
+    font-size: xx-large;
+    color: white;
+}
+.button ~ .button31 .content, .button ~ .button32 .content, .button ~ .button33 .content {
+    color: black;
+    font-weight: 300;
+}
+.button47 {
+    grid-column: span 2;
+}
+.orange {
+    background-color: orange;
+    font-weight: 400;
+}
